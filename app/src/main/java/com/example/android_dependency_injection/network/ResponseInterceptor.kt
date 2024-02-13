@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class ResponseInterceptor @Inject constructor() : Interceptor {
     override fun log(msg: String) {
-        Log.d("jordiee", "this is response interceptor")
+        Log.d("jordiee", "this is response interceptor :$msg")
     }
 }

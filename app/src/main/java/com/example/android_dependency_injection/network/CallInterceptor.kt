@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class CallInterceptor @Inject constructor() : Interceptor {
     override fun log(msg: String) {
-        Log.d("jordiee", "this is call interceptor")
+        Log.d("jordiee", "this is call interceptor :$msg")
     }
 }

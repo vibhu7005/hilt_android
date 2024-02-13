@@ -1,6 +1,6 @@
 package com.example.android_dependency_injection.network
 
-import java.nio.file.attribute.AclEntry.Builder
+import android.util.Log
 
 class NetworkService private constructor(builder : Builder) {
     var protocol : String? = null
@@ -13,6 +13,11 @@ class NetworkService private constructor(builder : Builder) {
         this.host = builder.host
         this.path = builder.path
         this.interceptor = builder.interceptor
+    }
+
+    fun performNetworkCall() {
+        interceptor?.log("call performed")
+        Log.d("jordiee", "network call performed : $this")
     }
 
     class Builder {
