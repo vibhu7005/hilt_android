@@ -8,4 +8,5 @@ import javax.inject.Inject
 
 //mandatory for hilt
 @HiltAndroidApp
-class JordieeApplication : Application()
+class JordieeApplication : Application() {
+}

@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "android_dependency_injection"
 include(":app")
- 
+include(":app:core")
+include(":core")
