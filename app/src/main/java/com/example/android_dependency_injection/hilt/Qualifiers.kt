@@ -11,8 +11,3 @@ annotation class JordieeResponseIntereptor
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class JordieeCallInterceptor
-
-
-@Qualifier
-@Retention(AnnotationRetention.BINARY)
-annotation class Jordiee

@@ -8,9 +8,4 @@ import javax.inject.Inject
 
 //mandatory for hilt
 @HiltAndroidApp
-class JordieeApplication : Application() {
-
-    @Inject
-    @JordieeCallInterceptor
-    lateinit var networkService: NetworkService
-}
+class JordieeApplication : Application()

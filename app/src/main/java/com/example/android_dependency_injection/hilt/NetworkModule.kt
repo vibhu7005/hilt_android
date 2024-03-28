@@ -1,5 +1,6 @@
 package com.example.android_dependency_injection.hilt
 
+import android.content.Context
 import com.example.android_dependency_injection.network.CallInterceptor
 import com.example.android_dependency_injection.network.MyAppNetworkAdapter
 import com.example.android_dependency_injection.network.NetworkAdapter
@@ -11,6 +12,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.android.components.ViewComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ActivityScoped
 
 @Module
@@ -20,8 +22,8 @@ class NetworkModule {
 //    abstract fun bindNetworkAdapter(adapter : MyAppNetworkAdapter) : NetworkAdapter
 
     @Provides
-    fun provideNetworkAdapter() : NetworkAdapter {
-        return MyAppNetworkAdapter(4)
+    fun provideNetworkAdapter(@ApplicationContext context : Context) : NetworkAdapter {
+        return MyAppNetworkAdapter(4, context)
     }
 
 
@@ -35,7 +37,6 @@ class NetworkModule {
     }
 
     @Provides
-    @ActivityScoped
     @JordieeResponseIntereptor
     fun provideResponseNetworkService() : NetworkService {
         return NetworkService.Builder().host("jordiee")
